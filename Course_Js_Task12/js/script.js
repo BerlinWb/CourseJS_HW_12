@@ -4,13 +4,13 @@ let birthYear = prompt('What year were you born?');
 let city = prompt("What city do you live in?");
 let sport = prompt("What is your favorite sport?");
 
-let resultCity;
-let resultSport;
-let resultbirthYear;
+let resultCity = null;
+let resultSport = null;
+let resultbirthYear = null;
 
 let age = 2022 - birthYear;
 
-let cancel;
+let cancel = null;
 
 
 resultCity = (city === "Kiev") ? 'Kyiv is the capital of Ukraine' :
@@ -24,7 +24,7 @@ resultSport = (sport === "football") ? "football - Cool! Do you want to be like 
         `${sport} Сool choice!`;
 
 
-cancel = (birthYear === null) ? alert('You canceled the age') :
+cancel = (birthYear === null || birthYear === '') ? alert('You canceled the age') :
   (city === null) ? alert('You canceled the city') :
     (sport === null) ?  alert('You canceled the sport') :
         alert(`Your age - ${age}: Your city - ${resultCity}: Your favorit sport - ${resultSport} `);
